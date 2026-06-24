@@ -1,0 +1,1 @@
+import {useEffect,useState} from "react"; export default function Cart(){ const [cart,setCart]=useState([]); useEffect(()=>{setCart(JSON.parse(localStorage.getItem("cart"))||[])},[]); return(<div><h1>Cart</h1>{cart.map((item,index)=><div key={index}><h3>{item.name}</h3><p>₦{item.price}</p></div>)}</div>) }

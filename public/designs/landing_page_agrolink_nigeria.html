@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgroLink Nigeria - Connecting Farmers and Buyers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255,248,246,0.95) 0%, rgba(255,248,246,0.7) 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#78dc77",
+                      "surface-variant": "#ffdbce",
+                      "primary-container": "#2e7d32",
+                      "on-surface-variant": "#40493d",
+                      "on-secondary-fixed-variant": "#005313",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#91f78e",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#88d982",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffddb5",
+                      "surface-container-high": "#ffe2d9",
+                      "background": "#fff8f6",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "tertiary": "#774c00",
+                      "surface-container": "#ffe9e2",
+                      "primary-fixed": "#a3f69c",
+                      "surface": "#fff8f6",
+                      "on-primary-fixed": "#002204",
+                      "inverse-on-surface": "#ffede7",
+                      "secondary-fixed": "#94f990",
+                      "secondary": "#006e1c",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb957",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#2b160f",
+                      "tertiary-container": "#986200",
+                      "outline": "#707a6c",
+                      "primary-fixed-dim": "#88d982",
+                      "primary": "#0d631b",
+                      "surface-dim": "#f8d2c4",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#1b6d24",
+                      "surface-bright": "#fff8f6",
+                      "on-tertiary-fixed": "#2a1800",
+                      "surface-container-highest": "#ffdbce",
+                      "on-surface": "#2b160f",
+                      "on-primary-fixed-variant": "#005312",
+                      "on-primary-container": "#cbffc2",
+                      "on-tertiary-container": "#ffeede",
+                      "on-secondary-fixed": "#002204",
+                      "inverse-surface": "#422b22",
+                      "surface-container-low": "#fff1ec",
+                      "outline-variant": "#bfcaba",
+                      "on-tertiary-fixed-variant": "#643f00",
+                      "on-secondary-container": "#00731e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "gutter-desktop": "24px",
+                      "gutter-mobile": "16px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md-mobile": ["Manrope"],
+                      "title-lg": ["Manrope"],
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar Navigation Shell -->
+<header class="w-full sticky top-0 z-50 shadow-sm bg-surface-container-lowest transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-headline-md" data-icon="agriculture">agriculture</span>
+<span class="text-title-lg font-headline-md text-primary tracking-tight">AgroLink Nigeria</span>
+</div>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary font-title-lg text-title-lg transition-all duration-200 ease-in-out" href="#">Market</a>
+<a class="text-on-surface-variant hover:text-primary-container font-title-lg text-title-lg transition-all duration-200 ease-in-out" href="#">Insights</a>
+<a class="text-on-surface-variant hover:text-primary-container font-title-lg text-title-lg transition-all duration-200 ease-in-out" href="#">Surplus</a>
+<a class="text-on-surface-variant hover:text-primary-container font-title-lg text-title-lg transition-all duration-200 ease-in-out" href="#">Login</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95">Get Started</button>
+</nav>
+<!-- Mobile Avatar Trigger -->
+<div class="md:hidden">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Farmer Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAJ4bTCq69eJtakrR-J4wYOJg2lFVbsd1Gw9dVSxSlVDThxBDdFfUT88putN0bVq7B10Rhd-FA8HwRl5PY5YgoQuw4Sd3yXVVYnZFekjCuuGm_QE61csRIZt7GH-i-F0Bd-2P9HlHp7xz78YZgpuRNmmQtQC8n9BfSedR5nTnIgyD6A7mfZHVGfSg25wC2S9Ap8Xiwlk209OINSoh97WbEt6ZBklpxaRYpBOaBgCyKFc0T2ne2hQP5JSSeVRi8DdxdeFhg4Piqcw"/>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[751px] flex items-center overflow-hidden">
+<!-- Background Image with prompt-driven detail -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A professional and high-resolution portrait of a dignified Nigerian farmer standing proudly in a lush green field during the golden hour. The sunlight is warm and soft, casting a radiant glow over a vibrant harvest of fresh tomatoes and peppers in the foreground. The composition is modern and cinematic, using a shallow depth of field to emphasize the farmer's weathered hands and hopeful expression. The overall aesthetic is grounded in the Digital Harvest brand, featuring rich greens and earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzc_RPXHQTTtZd9E6szPo2zGrXp7CtgqTIZ9WKXj0lSZPdLw-m0XOkzFl62CjteaKzcA4145Okn2s7MyhmeL9B1KOfyNqGNmVxd9iFZWGtyqvewkCm5E2ggOuywz_xcp0NVv0pPQEBYNbzFPnnOSn7dyc5YpuX3o4jUA3oMQ6IVL58VCkNa115YpMAMktmqlYl2a60I6moxxUav_UFrea8x2LoG1AQqRBvgYtszxRatC_sougmS9I2vH196mb_AWcXTcoBxx_xBw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-2">
+<div class="max-w-xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">
+                        Connecting Farmers and Buyers Across Africa
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                        Empowering Nigerian farmers with direct market access and sustainable growth. Join the digital marketplace designed for the modern agricultural harvest.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-title-lg text-title-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95 shadow-lg shadow-primary/20">
+                            Get Started
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-surface-container-high border-2 border-outline-variant text-primary px-8 py-4 rounded-xl font-title-lg text-title-lg hover:bg-surface-container-highest transition-all active:scale-95">
+                            Login
+                        </button>
+</div>
+<!-- Trust Stats -->
+<div class="mt-12 flex gap-8">
+<div>
+<p class="font-headline-md text-primary">15k+</p>
+<p class="font-label-sm text-on-surface-variant">Verified Farmers</p>
+</div>
+<div>
+<p class="font-headline-md text-primary">₦2.4B</p>
+<p class="font-label-sm text-on-surface-variant">Trade Volume</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-background mb-4">Market-Leading Infrastructure</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Providing the tools necessary for Nigerian agriculture to thrive in a global digital economy.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1: Direct Access -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="storefront">storefront</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-background mb-3">Direct Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Eliminate middlemen and connect directly with bulk buyers, increasing your profit margins by up to 40%.</p>
+</div>
+<!-- Feature 2: Verified Farmers -->
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl shadow-lg transform md:-translate-y-4">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-3">Verified Farmers</h3>
+<p class="font-body-md text-body-md opacity-90">Every producer on our platform undergoes a rigorous vetting process to ensure quality and reliability for buyers.</p>
+<div class="mt-6 flex items-center gap-2">
+<span class="text-label-sm font-label-sm">Learn about verification</span>
+<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+<!-- Feature 3: Secure Payments -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-background mb-3">Secure Payments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Industry-leading escrow and instant disbursement systems ensure both parties are protected in every transaction.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-background mb-16 text-center">Voices from the Field</h2>
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Testimonial 1 -->
+<div class="flex-1 bg-surface-container p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8" data-icon="format_quote">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-8 relative z-10">
+                            "Before AgroLink, I struggled to find fair prices for my cocoa harvest. Now, I have buyers from across Nigeria bidding directly for my produce before I even harvest."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Farmer Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZjSf2rH8xqhHZq3Isd3F2CYvP4niDqkJYz2gFijgQUDKrfJ_dE-PrKExolRmbIC7enPAC7ew7X8OXQHaxiWfylufkAkY2VlXnHVJfItvOnev3-ZreqS5AAaz7j2IT9BIzMRUEOvwlg17BTC3u1YHYC4gDGzHxzDPAE0zjr7kVtGFa1ngsK4cnddOHbbpY6W_z2jVVPx_h2gHWd9yzqZyh9Cksj_E5Xy1n4lETFHAwFJ3wFlwY7tjAVQ6mLV84EUIjYttXBB2_NQ"/>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-background">Ibrahim Lawal</h4>
+<p class="font-label-sm text-primary">Cocoa Farmer, Ondo State</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="flex-1 bg-surface-container p-8 rounded-2xl relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8" data-icon="format_quote">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mb-8 relative z-10">
+                            "The quality assurance and logistics support are game changers. We've scaled our distribution business by 300% since partnering with AgroLink's verified network."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Buyer Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbwTS9Cc-VOLSzWyLSP8PKjhqDRc4MBvNTPMYirwZQ9S8RuFCld9D0JBYnKxtRtyT9rZw2tRbrSFJbuRSExtbJDbsItVbJ9smB-FewL-8bnUfXgIYIIa917iCDe-4ojUjFY6b6xgMX1nXEbwo0xZ4WWLyndnR3qzlh7kskUqBPkfGPrfbueAzD_QbGYCKBN2Nn72em12WagokpNBoHnE0a54LGVH2yuYEW-DFva_zxlnxQrI_uuGfhXrh_UXhVAWu0SOHHnhpeKg"/>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-background">Amaka Obi</h4>
+<p class="font-label-sm text-primary">CEO, Obi Logistics &amp; Sourcing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-inverse-surface rounded-3xl p-12 text-center text-inverse-on-surface overflow-hidden relative">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary rounded-full opacity-10 blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary rounded-full opacity-10 blur-3xl"></div>
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md mb-6">Ready to Digitalize Your Harvest?</h2>
+<p class="font-body-lg text-body-lg opacity-80 max-w-2xl mx-auto mb-10">
+                    Join thousands of Nigerian farmers and buyers already transforming the agricultural landscape. Direct access, better prices, more growth.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed px-10 py-4 rounded-xl font-headline-md text-label-md hover:shadow-xl transition-all active:scale-95">Create Free Account</button>
+<button class="bg-transparent border border-outline-variant text-inverse-on-surface px-10 py-4 rounded-xl font-headline-md text-label-md hover:bg-white/10 transition-all">Contact Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-highest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-16 w-full max-w-container-max mx-auto gap-12">
+<div class="max-w-xs">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary font-headline-md" data-icon="agriculture">agriculture</span>
+<span class="text-headline-md text-primary tracking-tight">AgroLink Nigeria</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Pioneering the digital harvest through sustainable growth and innovative market access for West Africa's agriculture.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12 flex-grow justify-items-end">
+<div>
+<h5 class="font-title-lg text-on-surface mb-6">Marketplace</h5>
+<ul class="space-y-4 font-label-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Buy Produce</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sell Surplus</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Price Tracker</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Logistics</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-title-lg text-on-surface mb-6">Resources</h5>
+<ul class="space-y-4 font-label-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Farmer Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Impact Stats</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Market Rules</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-title-lg text-on-surface mb-6">Legal</h5>
+<ul class="space-y-4 font-label-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Farmer Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Market Rules</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 px-margin-desktop py-8 w-full max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 AgroLink Nigeria. Digital Harvest for Sustainable Growth.</p>
+<div class="flex gap-6 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors underline" href="#">Impact Stats</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Farmer Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Marketplace Rules</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar for Mobile -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 px-margin-mobile bg-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant/5">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-sm text-label-sm">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label-sm text-label-sm">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="recycling">recycling</span>
+<span class="font-label-sm text-label-sm">Surplus</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</div>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-2', 'bg-white/90', 'backdrop-blur-md');
+                header.classList.remove('py-4', 'bg-surface-container-lowest');
+            } else {
+                header.classList.remove('py-2', 'bg-white/90', 'backdrop-blur-md');
+                header.classList.add('py-4', 'bg-surface-container-lowest');
+            }
+        });
+    </script>
+</body></html>

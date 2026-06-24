@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgroLink Nigeria - Login &amp; Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#78dc77",
+                      "surface-variant": "#ffdbce",
+                      "primary-container": "#2e7d32",
+                      "on-surface-variant": "#40493d",
+                      "on-secondary-fixed-variant": "#005313",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#91f78e",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#88d982",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffddb5",
+                      "surface-container-high": "#ffe2d9",
+                      "background": "#fff8f6",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "tertiary": "#774c00",
+                      "surface-container": "#ffe9e2",
+                      "primary-fixed": "#a3f69c",
+                      "surface": "#fff8f6",
+                      "on-primary-fixed": "#002204",
+                      "inverse-on-surface": "#ffede7",
+                      "secondary-fixed": "#94f990",
+                      "secondary": "#006e1c",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb957",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#2b160f",
+                      "tertiary-container": "#986200",
+                      "outline": "#707a6c",
+                      "primary-fixed-dim": "#88d982",
+                      "primary": "#0d631b",
+                      "surface-dim": "#f8d2c4",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#1b6d24",
+                      "surface-bright": "#fff8f6",
+                      "on-tertiary-fixed": "#2a1800",
+                      "surface-container-highest": "#ffdbce",
+                      "on-surface": "#2b160f",
+                      "on-primary-fixed-variant": "#005312",
+                      "on-primary-container": "#cbffc2",
+                      "on-tertiary-container": "#ffeede",
+                      "on-secondary-fixed": "#002204",
+                      "inverse-surface": "#422b22",
+                      "surface-container-low": "#fff1ec",
+                      "outline-variant": "#bfcaba",
+                      "on-tertiary-fixed-variant": "#643f00",
+                      "on-secondary-container": "#00731e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "gutter-desktop": "24px",
+                      "gutter-mobile": "16px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md-mobile": ["Manrope"],
+                      "title-lg": ["Manrope"],
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #fff8f6;
+            color: #2b160f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-role {
+            border-color: #0d631b;
+            background-color: #ffe9e2;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
+        }
+        .form-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar (Suppressed Shell as per instructions for Login screens, but using simple brand mark) -->
+<header class="w-full py-6 px-margin-mobile md:px-margin-desktop flex justify-center items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="agriculture">agriculture</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">AgroLink Nigeria</h1>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-margin-mobile py-8 md:py-12">
+<div class="w-full max-w-lg">
+<!-- Role Selection -->
+<div class="mb-8">
+<h2 class="font-title-lg text-title-lg text-center mb-6">Choose your role</h2>
+<div class="grid grid-cols-2 gap-4">
+<button class="role-card flex flex-col items-center p-6 rounded-xl border border-outline-variant bg-surface-container-lowest active-role transition-all hover:shadow-md group" id="role-buyer" onclick="selectRole('buyer')">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<span class="font-label-md text-label-md font-bold">Buyer</span>
+</button>
+<button class="role-card flex flex-col items-center p-6 rounded-xl border border-outline-variant bg-surface-container-lowest transition-all hover:shadow-md group" id="role-seller" onclick="selectRole('seller')">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="agriculture">agriculture</span>
+</div>
+<span class="font-label-md text-label-md font-bold">Seller (Farmer)</span>
+</button>
+</div>
+</div>
+<!-- Auth Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 overflow-hidden">
+<!-- Toggle Container -->
+<div class="flex border-b border-outline-variant/20 p-1 bg-surface-container-low">
+<button class="flex-1 py-3 font-label-md text-label-md rounded-lg transition-all bg-white shadow-sm font-bold text-primary" id="toggle-login" onclick="setAuthMode('login')">
+                        Login
+                    </button>
+<button class="flex-1 py-3 font-label-md text-label-md rounded-lg transition-all text-on-surface-variant hover:bg-surface-container-high" id="toggle-signup" onclick="setAuthMode('signup')">
+                        Sign Up
+                    </button>
+</div>
+<div class="p-8">
+<form class="space-y-5" id="auth-form" onsubmit="handleSubmit(event)">
+<!-- Full Name Field (Sign Up Only) -->
+<div class="hidden transition-all duration-300" id="field-name">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1" for="fullname">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="person">person</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface transition-all outline-none" id="fullname" placeholder="Enter your full name" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="mail">mail</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface transition-all outline-none" id="email" placeholder="example@agrolink.ng" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<div class="flex justify-between items-center mb-2 ml-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#" id="forgot-pass-link">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface transition-all outline-none" id="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Confirm Password (Sign Up Only) -->
+<div class="hidden transition-all duration-300" id="field-confirm">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1" for="confirm_password">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="verified">verified</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 bg-surface transition-all outline-none" id="confirm_password" placeholder="Re-enter your password" type="password"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-4 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-xl shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all flex justify-center items-center gap-2" id="submit-btn" type="submit">
+<span id="btn-text">Log In to Account</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-4">
+                            By continuing, you agree to our <a class="text-primary underline" href="#">Marketplace Rules</a> and <a class="text-primary underline" href="#">Privacy Policy</a>.
+                        </p>
+</form>
+</div>
+</div>
+<div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 opacity-80">
+<div class="flex items-start gap-3">
+<div class="mt-1 p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="security">security</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Secure Transactions</h4>
+<p class="text-xs text-on-surface-variant">Escrow protection for every harvest trade.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="mt-1 p-2 bg-primary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Verified Farmers</h4>
+<p class="text-xs text-on-surface-variant">Quality assurance through our tiering system.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full py-8 px-margin-desktop bg-surface-container-highest mt-auto border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 AgroLink Nigeria. Digital Harvest for Sustainable Growth.</p>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Farmer Terms</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace Rules</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+
+let currentMode = 'login';
+let currentRole = 'buyer';
+
+function selectRole(role) {
+    currentRole = role;
+
+    document.querySelectorAll('.role-card').forEach(card => {
+        card.classList.remove('active-role');
+    });
+
+    document
+      .getElementById(`role-${role}`)
+      .classList.add('active-role');
+}
+
+function setAuthMode(mode) {
+    currentMode = mode;
+
+    const loginBtn = document.getElementById('toggle-login');
+    const signupBtn = document.getElementById('toggle-signup');
+    const nameField = document.getElementById('field-name');
+    const confirmField = document.getElementById('field-confirm');
+    const submitBtnText = document.getElementById('btn-text');
+    const forgotPass = document.getElementById('forgot-pass-link');
+
+    if (mode === 'signup') {
+
+        loginBtn.classList.remove(
+            'bg-white',
+            'shadow-sm',
+            'font-bold',
+            'text-primary'
+        );
+
+        signupBtn.classList.add(
+            'bg-white',
+            'shadow-sm',
+            'font-bold',
+            'text-primary'
+        );
+
+        nameField.classList.remove('hidden');
+        confirmField.classList.remove('hidden');
+
+        submitBtnText.innerText =
+        'Create Account';
+
+        forgotPass.classList.add('invisible');
+
+    } else {
+
+        signupBtn.classList.remove(
+            'bg-white',
+            'shadow-sm',
+            'font-bold',
+            'text-primary'
+        );
+
+        loginBtn.classList.add(
+            'bg-white',
+            'shadow-sm',
+            'font-bold',
+            'text-primary'
+        );
+
+        nameField.classList.add('hidden');
+        confirmField.classList.add('hidden');
+
+        submitBtnText.innerText =
+        'Log In to Account';
+
+        forgotPass.classList.remove('invisible');
+    }
+}
+
+
+function handleSubmit(e) {
+
+e.preventDefault();
+
+const btn =
+document.getElementById("submit-btn");
+
+btn.innerHTML =
+"Loading...";
+
+btn.disabled=true;
+
+
+setTimeout(()=>{
+
+if(currentRole==="buyer"){
+
+window.parent.location.href=
+"/buyer_dashboard_agrolink_nigeria";
+
+}
+
+else if(currentRole==="seller"){
+
+window.parent.location.href=
+"/seller_dashboard_agrolink_nigeria";
+
+}
+
+},1000);
+
+}
+
+</script>
+</body></html>
