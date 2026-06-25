@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroLink Cart</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+rel="stylesheet"
+/>
+
+</head>
+
+<body class="bg-green-50 min-h-screen">
+
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+
+<div class="flex items-center gap-2">
+
+<span class="material-symbols-outlined text-green-700">
+shopping_cart
+</span>
+
+<h1 class="text-xl font-bold text-green-700">
+My Cart
+</h1>
+
+</div>
+
+<button
+onclick="goBack()"
+class="bg-green-700 text-white px-4 py-2 rounded-lg"
+>
+
+Back
+
+</button>
+
+</header>
+
+
+<div
+id="cart-container"
+class="max-w-5xl mx-auto p-6"
+>
+
+</div>
+
+
+<div
+class="max-w-5xl mx-auto px-6 pb-10"
+>
+
+<div class="bg-white rounded-xl p-6 shadow">
+
+<div class="flex justify-between mb-4">
+
+<h2 class="font-bold text-lg">
+Total:
+</h2>
+
+<h2
+id="total-price"
+class="font-bold text-green-700 text-xl"
+>
+
+₦0
+
+</h2>
+
+</div>
+
+<button
+class="w-full bg-green-700 text-white py-3 rounded-lg"
+>
+
+Proceed To Checkout
+
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function loadCart(){
+
+const cart=
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+const container=
+document.getElementById(
+"cart-container"
+);
+
+const totalPrice=
+document.getElementById(
+"total-price"
+);
+
+container.innerHTML="";
+
+let total=0;
+
+if(cart.length===0){
+
+container.innerHTML=`
+
+<div class="bg-white p-10 rounded-xl text-center shadow">
+
+<h2 class="text-xl font-bold mb-2">
+Cart is empty
+</h2>
+
+<p class="text-gray-500">
+Add products from the marketplace
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+cart.forEach((item,index)=>{
+
+total +=
+item.price *
+item.quantity;
+
+container.innerHTML += `
+
+<div class="bg-white rounded-xl shadow p-4 mb-4 flex gap-4 items-center">
+
+<img
+src="${item.image}"
+class="w-24 h-24 rounded-lg object-cover"
+>
+
+<div class="flex-1">
+
+<h3 class="font-bold">
+${item.name}
+</h3>
+
+<p class="text-green-700">
+₦${item.price.toLocaleString()}
+</p>
+
+<p>
+Quantity:
+${item.quantity}
+</p>
+
+</div>
+
+<button
+onclick="removeItem(${index})"
+class="bg-red-500 text-white px-4 py-2 rounded"
+>
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+totalPrice.innerText=
+"₦" +
+total.toLocaleString();
+
+}
+
+
+
+function removeItem(index){
+
+let cart=
+JSON.parse(
+localStorage.getItem("cart")
+)||[];
+
+cart.splice(index,1);
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+loadCart();
+
+}
+
+
+
+function goBack(){
+
+window.location.href=
+"buyer_dashboard_agrolink_nigeria";
+
+}
+
+
+loadCart();
+
+</script>
+
+</body>
+</html>

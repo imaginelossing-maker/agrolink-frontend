@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>All Products - AgroLink</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-[#fff8f6]">
+
+<div class="max-w-7xl mx-auto p-6">
+
+<!-- Header -->
+
+<div class="flex items-center gap-4 mb-8">
+
+<a
+href="/design/buyer.html"
+class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100"
+>
+
+<span class="material-symbols-outlined">
+
+arrow_back
+
+</span>
+
+</a>
+
+<div>
+
+<h1 class="text-3xl font-bold text-green-700">
+All Available Products
+</h1>
+
+<p class="text-gray-500">
+Browse all farm produce
+</p>
+
+</div>
+
+</div>
+
+
+<div
+id="products"
+class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+>
+
+</div>
+
+</div>
+
+
+<script>
+
+const products=[
+
+{
+name:"Premium Brown Rice (50kg)",
+price:"₦45,000",
+farmer:"Musa Ali",
+state:"Jos, Plateau",
+category:"Grains"
+},
+
+{
+name:"Fresh Tomatoes (Crate)",
+price:"₦12,500",
+farmer:"Aminu Farm",
+state:"Zaria, Kaduna",
+category:"Vegetables"
+},
+
+{
+name:"Large White Yam",
+price:"₦22,000",
+farmer:"Ortom Roots",
+state:"Benue",
+category:"Tubers"
+},
+
+{
+name:"Yellow Maize",
+price:"₦38,000",
+farmer:"Sani Grains",
+state:"Kano",
+category:"Grains"
+},
+
+{
+name:"Cassava Tubers",
+price:"₦16,000",
+farmer:"John Farms",
+state:"Ogun",
+category:"Tubers"
+},
+
+{
+name:"Pepper Basket",
+price:"₦9000",
+farmer:"Grace Farms",
+state:"Lagos",
+category:"Vegetables"
+},
+
+{
+name:"Plantain Bundle",
+price:"₦15000",
+farmer:"Bright Agro",
+state:"Delta",
+category:"Fruits"
+},
+
+{
+name:"Watermelon",
+price:"₦7000",
+farmer:"Ahmed Farms",
+state:"Kaduna",
+category:"Fruits"
+},
+
+{
+name:"Beans (50kg)",
+price:"₦54000",
+farmer:"Ali Agro",
+state:"Katsina",
+category:"Grains"
+},
+
+{
+name:"Groundnut Bag",
+price:"₦35000",
+farmer:"Peace Farms",
+state:"Niger",
+category:"Grains"
+}
+
+];
+
+for(let i=1;i<=40;i++){
+
+products.push({
+
+name:`Farm Produce ${i}`,
+price:`₦${Math.floor(Math.random()*50000+5000)}`,
+
+farmer:`Farmer ${i}`,
+
+state:"Nigeria",
+
+category:"Produce"
+
+});
+
+}
+
+
+const productImages={
+
+"Premium Brown Rice (50kg)":"https://images.unsplash.com/photo-1586201375761-83865001e31c",
+"Fresh Tomatoes (Crate)":"https://images.unsplash.com/photo-1592924357228-91a4daadcfea",
+"Large White Yam":"https://images.unsplash.com/photo-1603048297172-c92544798d5a",
+"Yellow Maize":"https://images.unsplash.com/photo-1551754655-cd27e38d2076",
+"Cassava Tubers":"https://images.unsplash.com/photo-1627483262769-75f8e0b64b63",
+"Pepper Basket":"https://images.unsplash.com/photo-1563565375-f3fdfdbefa83",
+"Plantain Bundle":"https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e",
+"Watermelon":"https://images.unsplash.com/photo-1563114773-84221bd62daa",
+"Beans (50kg)":"https://images.unsplash.com/photo-1515543904379-3d757afe72e4",
+"Groundnut Bag":"https://images.unsplash.com/photo-1598514983318-2f64f8f4796c"
+
+};
+
+const container=document.getElementById("products");
+
+let html="";
+
+products.forEach(product=>{
+
+let image=
+
+productImages[product.name]
+
+||
+
+"https://images.unsplash.com/photo-1523741543316-beb7fc7023d8";
+
+html+=`
+
+<div class="flex flex-col bg-white rounded-xl shadow overflow-hidden">
+
+<div class="aspect-[4/3]">
+
+<img
+src="${image}"
+class="w-full h-full object-cover"
+alt="${product.name}"
+/>
+
+</div>
+
+<div class="p-4">
+
+<span class="text-xs text-green-700">
+${product.category}
+</span>
+
+<h4 class="font-semibold mt-2">
+${product.name}
+</h4>
+
+<div class="flex items-center text-gray-500 text-sm mt-2">
+
+<span class="material-symbols-outlined text-sm mr-1">
+
+location_on
+
+</span>
+
+${product.state}
+
+</div>
+
+<div class="flex justify-between mt-4">
+
+<span class="font-bold text-green-700">
+${product.price}
+</span>
+
+<span class="text-xs text-gray-500">
+
+By ${product.farmer}
+
+</span>
+
+</div>
+
+<button
+class="w-full mt-4 py-2 rounded-lg bg-green-700 text-white"
+>
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+container.innerHTML=html;
+
+</script>
+
+</body>
+</html>

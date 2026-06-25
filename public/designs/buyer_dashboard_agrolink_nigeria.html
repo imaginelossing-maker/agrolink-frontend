@@ -140,9 +140,29 @@
 <h1 class="text-title-lg font-headline-md text-primary dark:text-primary-fixed tracking-tight">AgroLink Nigeria</h1>
 </div>
 <div class="flex items-center gap-4">
-<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-</button>
+<div class="relative">
+
+<a
+href="../cart.html"
+class="p-2 rounded-full hover:bg-surface-container transition-colors inline-block"
+>
+<span class="material-symbols-outlined text-on-surface-variant">
+shopping_cart
+</span>
+</a>
+
+<span
+id="cart-count"
+class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+>
+0
+</span>
+<div class="absolute top-12 right-0 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+View Cart
+</div>
+
+</div>
+</div>
 <div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-on-primary-container font-bold border-2 border-outline-variant">
                     AO
                 </div>
@@ -186,9 +206,15 @@
 <h3 class="font-title-lg text-title-lg text-on-surface">Available Now</h3>
 <div class="h-1 w-12 bg-primary mt-1 rounded-full"></div>
 </div>
-<button class="text-primary font-label-md flex items-center gap-1 hover:underline">
-                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
+<a
+href="../product.html"
+class="text-primary font-label-md flex items-center gap-1 hover:underline"
+>
+View All
+<span class="material-symbols-outlined text-sm">
+arrow_forward
+</span>
+</a>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter-mobile md:gap-gutter-desktop">
 <!-- Product Card 1 -->
@@ -206,9 +232,24 @@
 <span class="material-symbols-outlined text-sm">location_on</span>
 <span class="text-[12px]">Jos, Plateau</span>
 </div>
-<div class="mt-auto flex justify-between items-center">
+<div class="mt-auto">
+
+<div class="flex justify-between items-center mb-3">
 <span class="font-title-lg text-primary">₦45,000</span>
 <span class="text-[11px] font-label-sm text-outline">By Musa Ali</span>
+</div>
+
+<button
+onclick="addToCart(
+'Premium Brown Rice',
+45000,
+'https://lh3.googleusercontent.com/aida-public/AB6AXuB9TYCNUgtOCzw-fXT-x5GAHi7byJTq8sY-sWuoR9MRFYvqoDUQn_CzQBnUqLDsYg_GCgqv2Opzg-Zg4VOMq3krfQw4WYUnfl2-7OhaXrOvRqBtJMyzxLQFVYeGgb78WAuQxVdi63WwO3Fm_4mzuNT9UvYcoZd38akCk5P3ZNK48BMsD8iOfEMfu7s1kHBv1osNm1bZcNTudQj8gm1YN_bPACs9Ab_kAJxwdh09QivTcFbTXX9xpC45-W6TTdUmITB2BsRF1bLF2Q'
+)"
+class="w-full py-2 bg-primary text-white rounded-lg"
+>
+Add To Cart
+</button>
+
 </div>
 </div>
 </div>
@@ -227,10 +268,16 @@
 <span class="material-symbols-outlined text-sm">location_on</span>
 <span class="text-[12px]">Zaria, Kaduna</span>
 </div>
-<div class="mt-auto flex justify-between items-center">
-<span class="font-title-lg text-primary">₦12,500</span>
-<span class="text-[11px] font-label-sm text-outline">By Aminu Farm</span>
-</div>
+<button
+onclick="addToCart(
+'Fresh Plum Tomatoes',
+12500,
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBrSx36gzo5KnOJelfRKay3795QugSCFInxKg_lhl-FKLATPbS7vd0DKRY87eMZuQe8kl31Jvo5mTkmmjHrhSY_529NIyPptxtzDDWf09EBf1maWyQIiFLCgtqMuTRzUsfRZK4x4hf5eGSeZKtHUlzGT3GMFXZ_7zC3kom3dnvpDKhScBonO3luWfeGtJch61c8dYtuFXJe73LBdzj9huOZ0bK7hHbAIPMjpNnilx14p8DRNtfUt6nPL-gWqSLEGB0W9kPU3TTz-Q'
+)"
+class="w-full py-2 bg-primary text-white rounded-lg mt-3"
+>
+Add To Cart
+</button>
 </div>
 </div>
 <!-- Product Card 3 -->
@@ -245,10 +292,16 @@
 <span class="material-symbols-outlined text-sm">location_on</span>
 <span class="text-[12px]">Benue, Nigeria</span>
 </div>
-<div class="mt-auto flex justify-between items-center">
-<span class="font-title-lg text-primary">₦22,000</span>
-<span class="text-[11px] font-label-sm text-outline">By Ortom Roots</span>
-</div>
+<button
+onclick="addToCart(
+'Large White Yam',
+22000,
+'https://lh3.googleusercontent.com/aida-public/AB6AXuAo2n7_mPybycvJoWZCMtsUKt8Tbog-dhysKnstH1KVldjXdclisE8xXr5JYjOP9jhr8agwC2TaVgVs8b0QbCJOmszeU92BiE1Jy-xq2mm9LTfBki_FSqJtMS2KPJoUtFYGvz1w3IPQWpAbB_sW0Gl67lHzNmHZN70udyT9X_bpCrM1O-uvkmxC6PCxJGOYvg2U4iOsUKW8WEeS2h7OZsPHYIrPp7Slvy8JEhW1WcLBTtp8uwrx7cMH9zItl12uBzobpXRZ9lBbZw'
+)"
+class="w-full py-2 bg-primary text-white rounded-lg mt-3"
+>
+Add To Cart
+</button>
 </div>
 </div>
 <!-- Product Card 4 -->
@@ -263,10 +316,16 @@
 <span class="material-symbols-outlined text-sm">location_on</span>
 <span class="text-[12px]">Kano, Nigeria</span>
 </div>
-<div class="mt-auto flex justify-between items-center">
-<span class="font-title-lg text-primary">₦38,000</span>
-<span class="text-[11px] font-label-sm text-outline">By Sani Grains</span>
-</div>
+<button
+onclick="addToCart(
+'Yellow Maize',
+38000,
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBTVuooFed1f-QZwRY-j1WmdETwZOl0vsGnC-Z1jhkW2mSdczX9luNJj0yUn9FMCMsC-wTPv6D2uc5i2kfplnfOUBAN7CsEYsRSPSrJFPwJEonQBf267yr-ltXyIAOUgwB8wqlBNetqSugmU_33lKxU2m1XsD7Iiom1hNjbDa2jxboJdhay_YnP5qNr3ofhfOTqoNYYKe26cRS9LZSDnY0pJ33WJ0Gh0T5kyg3T8As3JtOrbYnTi7vz0zv13iz39iDgR9azbmdvHw'
+)"
+class="w-full py-2 bg-primary text-white rounded-lg mt-3"
+>
+Add To Cart
+</button>
 </div>
 </div>
 </div>
@@ -308,9 +367,19 @@
 <span class="material-symbols-outlined">recycling</span>
 <span class="font-label-sm text-label-sm">Surplus</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined">account_circle</span>
-<span class="font-label-sm text-label-sm">Profile</span>
+<a
+class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1"
+href="../buyer-profile.html"
+>
+
+<span class="material-symbols-outlined">
+account_circle
+</span>
+
+<span class="font-label-sm">
+Profile
+</span>
+
 </a>
 </nav>
 <!-- Footer (Desktop Only) -->
@@ -323,27 +392,160 @@
 <a class="hover:text-primary transition-colors" href="#">Marketplace Rules</a>
 </div>
 </footer>
-<script>
-        // Simple search interaction
-        const searchInput = document.querySelector('input[type="text"]');
-        searchInput.addEventListener('focus', () => {
-            searchInput.parentElement.classList.add('scale-[1.01]');
-        });
-        searchInput.addEventListener('blur', () => {
-            searchInput.parentElement.classList.remove('scale-[1.01]');
-        });
 
-        // Category chip interaction
-        const chips = document.querySelectorAll('button.rounded-full');
-        chips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                chips.forEach(c => {
-                    c.classList.remove('bg-primary-container', 'text-on-primary-container');
-                    c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
-                });
-                chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
-                chip.classList.add('bg-primary-container', 'text-on-primary-container');
-            });
-        });
-    </script>
+<div id="toast" class="fixed top-6 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-all duration-300 z-[9999]">
+✅ Added successfully
+</div>
+
+<script>
+
+    function addToCart(name,price,image){
+
+        let cart=JSON.parse(
+    localStorage.getItem("cart")
+    ) || [];
+
+    const existing=cart.find(
+    item=>item.name===name
+);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+name,
+price,
+image,
+quantity:1
+});
+
+}
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+updateCartCount();
+
+
+const toast=document.getElementById("toast");
+toast.innerText="✅ "+name+" added successfully";
+toast.classList.remove("opacity-0");
+setTimeout(()=>{
+toast.classList.add("opacity-0");
+},2000);
+
+
+}
+
+
+function updateCartCount(){
+
+let cart=JSON.parse(
+localStorage.getItem("cart")
+)||[];
+
+let total=0;
+
+cart.forEach(item=>{
+
+total+=item.quantity;
+
+});
+
+const count=
+document.getElementById(
+"cart-count"
+);
+
+if(count){
+
+count.innerText=total;
+
+}
+
+}
+
+
+function openCart(){
+
+window.location.href="../cart.html";
+
+}
+
+
+const searchInput=
+document.querySelector(
+'input[type="text"]'
+);
+
+searchInput.addEventListener(
+'focus',
+()=>{
+
+searchInput.parentElement.classList.add(
+'scale-[1.01]'
+);
+
+}
+);
+
+searchInput.addEventListener(
+'blur',
+()=>{
+
+searchInput.parentElement.classList.remove(
+'scale-[1.01]'
+);
+
+}
+);
+
+
+const chips=
+document.querySelectorAll(
+'button.rounded-full'
+);
+
+chips.forEach(chip=>{
+
+chip.addEventListener(
+'click',
+()=>{
+
+chips.forEach(c=>{
+
+c.classList.remove(
+'bg-primary-container',
+'text-on-primary-container'
+);
+
+c.classList.add(
+'bg-surface-container-high',
+'text-on-surface-variant'
+);
+
+});
+
+chip.classList.remove(
+'bg-surface-container-high',
+'text-on-surface-variant'
+);
+
+chip.classList.add(
+'bg-primary-container',
+'text-on-primary-container'
+);
+
+});
+
+});
+
+updateCartCount();
+
+</script>
 </body></html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroLink Farmer Marketplace</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.material-symbols-outlined{
+font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+.product-card{
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-5px);
+}
+</style>
+
+</head>
+
+<body class="bg-orange-50">
+
+<!-- Header -->
+
+<header class="bg-white shadow sticky top-0 z-50">
+
+<div class="max-w-7xl mx-auto flex justify-between items-center p-5">
+
+<div class="flex items-center gap-2">
+
+<span class="material-symbols-outlined text-green-700 text-4xl">
+agriculture
+</span>
+
+<h1 class="text-2xl font-bold text-green-700">
+AgroLink
+</h1>
+
+</div>
+
+
+<div class="flex gap-4 items-center">
+
+<button>
+
+<span class="material-symbols-outlined">
+notifications
+</span>
+
+</button>
+
+<div class="w-10 h-10 bg-green-700 rounded-full text-white flex justify-center items-center">
+
+AO
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- Welcome -->
+
+<section class="max-w-7xl mx-auto px-5 py-8">
+
+<h2 class="text-3xl font-bold">
+
+Marketplace
+
+</h2>
+
+<p class="text-gray-500">
+
+Browse products and discover market opportunities
+
+</p>
+
+</section>
+
+
+<!-- Search -->
+
+<section class="max-w-7xl mx-auto px-5">
+
+<div class="relative">
+
+<span class="material-symbols-outlined absolute left-4 top-4 text-gray-400">
+
+search
+
+</span>
+
+<input
+type="text"
+placeholder="Search rice, maize, tomatoes..."
+class="w-full pl-12 py-4 rounded-xl border"
+/>
+
+</div>
+
+</section>
+
+
+<!-- Categories -->
+
+<section class="max-w-7xl mx-auto px-5 py-6">
+
+<div class="flex gap-3 overflow-x-auto">
+
+<button class="bg-green-700 text-white px-5 py-2 rounded-full">
+All
+</button>
+
+<button class="bg-white px-5 py-2 rounded-full">
+🌾 Grains
+</button>
+
+<button class="bg-white px-5 py-2 rounded-full">
+🍅 Vegetables
+</button>
+
+<button class="bg-white px-5 py-2 rounded-full">
+🍠 Tubers
+</button>
+
+<button class="bg-white px-5 py-2 rounded-full">
+🐄 Livestock
+</button>
+
+<button class="bg-white px-5 py-2 rounded-full">
+🍍 Fruits
+</button>
+
+</div>
+
+</section>
+
+
+<!-- Market Overview -->
+
+<section class="max-w-7xl mx-auto px-5">
+
+<div class="grid md:grid-cols-4 gap-5">
+
+<div class="bg-white p-5 rounded-xl shadow">
+
+<p class="text-gray-500">
+
+Trending Product
+
+</p>
+
+<h2 class="font-bold text-xl">
+
+🍅 Tomatoes 🔥
+
+</h2>
+
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow">
+
+<p class="text-gray-500">
+
+Highest Demand
+
+</p>
+
+<h2 class="font-bold text-xl">
+
+🌾 Rice
+
+</h2>
+
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow">
+
+<p class="text-gray-500">
+
+Buyers Today
+
+</p>
+
+<h2 class="font-bold text-xl">
+
+320+
+
+</h2>
+
+</div>
+
+<div class="bg-white p-5 rounded-xl shadow">
+
+<p class="text-gray-500">
+
+Top Category
+
+</p>
+
+<h2 class="font-bold text-xl">
+
+Grains
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- Products -->
+
+<section class="max-w-7xl mx-auto px-5 py-8">
+
+<div class="flex justify-between">
+
+<h2 class="font-bold text-2xl">
+
+Available Market Products
+
+</h2>
+
+<button class="text-green-700">
+
+View All →
+
+</button>
+
+</div>
+
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+
+
+<!-- Product -->
+
+<div class="product-card bg-white rounded-xl overflow-hidden shadow">
+
+<img
+src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500"
+class="h-48 w-full object-cover"
+>
+
+<div class="p-4">
+
+<p class="text-green-700 text-sm">
+
+Grains
+
+</p>
+
+<h3 class="font-bold">
+
+Premium Rice (50kg)
+
+</h3>
+
+<p class="text-gray-500">
+
+📍 Kano
+
+</p>
+
+<p class="text-gray-500">
+
+👨 Musa Ali
+
+</p>
+
+<p>
+
+⭐4.8
+
+</p>
+
+<div class="flex justify-between mt-3">
+
+<h3 class="font-bold text-green-700">
+
+₦45,000
+
+</h3>
+
+<button class="bg-green-700 text-white px-3 py-2 rounded">
+
+View
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Product -->
+
+<div class="product-card bg-white rounded-xl overflow-hidden shadow">
+
+<img
+src="https://images.unsplash.com/photo-1561136594-7f68413baa99?w=500"
+class="h-48 w-full object-cover"
+>
+
+<div class="p-4">
+
+<p class="text-green-700 text-sm">
+
+Vegetables
+
+</p>
+
+<h3 class="font-bold">
+
+Fresh Tomatoes
+
+</h3>
+
+<p class="text-gray-500">
+
+📍 Kaduna
+
+</p>
+
+<p class="text-gray-500">
+
+👨 Aminu Farm
+
+</p>
+
+<p>
+
+⭐4.7
+
+</p>
+
+<div class="flex justify-between mt-3">
+
+<h3 class="font-bold text-green-700">
+
+₦12,500
+
+</h3>
+
+<button class="bg-green-700 text-white px-3 py-2 rounded">
+
+View
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Product -->
+
+<div class="product-card bg-white rounded-xl overflow-hidden shadow">
+
+<img
+src="https://images.unsplash.com/photo-1603048719539-9ecb4d11115b?w=500"
+class="h-48 w-full object-cover"
+>
+
+<div class="p-4">
+
+<p class="text-green-700 text-sm">
+
+Tubers
+
+</p>
+
+<h3 class="font-bold">
+
+White Yam
+
+</h3>
+
+<p class="text-gray-500">
+
+📍 Benue
+
+</p>
+
+<p class="text-gray-500">
+
+👨 Ortom Roots
+
+</p>
+
+<p>
+
+⭐4.9
+
+</p>
+
+<div class="flex justify-between mt-3">
+
+<h3 class="font-bold text-green-700">
+
+₦22,000
+
+</h3>
+
+<button class="bg-green-700 text-white px-3 py-2 rounded">
+
+View
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Product -->
+
+<div class="product-card bg-white rounded-xl overflow-hidden shadow">
+
+<img
+src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=500"
+class="h-48 w-full object-cover"
+>
+
+<div class="p-4">
+
+<p class="text-green-700 text-sm">
+
+Grains
+
+</p>
+
+<h3 class="font-bold">
+
+Yellow Maize
+
+</h3>
+
+<p class="text-gray-500">
+
+📍 Jos
+
+</p>
+
+<p class="text-gray-500">
+
+👨 Sani Grains
+
+</p>
+
+<p>
+
+⭐4.6
+
+</p>
+
+<div class="flex justify-between mt-3">
+
+<h3 class="font-bold text-green-700">
+
+₦38,000
+
+</h3>
+
+<button class="bg-green-700 text-white px-3 py-2 rounded">
+
+View
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- Bottom Navbar -->
+
+<nav class="fixed bottom-0 w-full bg-white shadow-lg">
+
+<div class="flex justify-around p-3">
+
+<div class="text-green-700 text-center">
+🏪
+<p class="text-sm">Marketplace</p>
+</div>
+
+<div class="text-center">
+📊
+<p class="text-sm">Insights</p>
+</div>
+
+<div class="text-center">
+🌱
+<p class="text-sm">My Produce</p>
+</div>
+
+<div class="text-center">
+📦
+<p class="text-sm">Orders</p>
+</div>
+
+<div class="text-center">
+👤
+<p class="text-sm">Profile</p>
+</div>
+
+</div>
+
+</nav>
+
+</body>
+</html>
