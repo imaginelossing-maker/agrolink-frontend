@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Marketplace Rules - AgroLink Nigeria</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "secondary-fixed-dim": "#78dc77",
+                "surface-variant": "#ffdbce",
+                "primary-container": "#2e7d32",
+                "on-surface-variant": "#40493d",
+                "on-secondary-fixed-variant": "#005313",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#91f78e",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#88d982",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffddb5",
+                "surface-container-high": "#ffe2d9",
+                "background": "#fff8f6",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "tertiary": "#774c00",
+                "surface-container": "#ffe9e2",
+                "primary-fixed": "#a3f69c",
+                "surface": "#fff8f6",
+                "on-primary-fixed": "#002204",
+                "inverse-on-surface": "#ffede7",
+                "secondary-fixed": "#94f990",
+                "secondary": "#006e1c",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#ffb957",
+                "on-tertiary": "#ffffff",
+                "on-background": "#2b160f",
+                "tertiary-container": "#986200",
+                "outline": "#707a6c",
+                "primary-fixed-dim": "#88d982",
+                "primary": "#0d631b",
+                "surface-dim": "#f8d2c4",
+                "on-secondary": "#ffffff",
+                "surface-tint": "#1b6d24",
+                "surface-bright": "#fff8f6",
+                "on-tertiary-fixed": "#2a1800",
+                "surface-container-highest": "#ffdbce",
+                "on-surface": "#2b160f",
+                "on-primary-fixed-variant": "#005312",
+                "on-primary-container": "#cbffc2",
+                "on-tertiary-container": "#ffeede",
+                "on-secondary-fixed": "#002204",
+                "inverse-surface": "#422b22",
+                "surface-container-low": "#fff1ec",
+                "outline-variant": "#bfcaba",
+                "on-tertiary-fixed-variant": "#643f00",
+                "on-secondary-container": "#00731e"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "unit": "8px",
+                "gutter-desktop": "24px",
+                "gutter-mobile": "16px",
+                "margin-desktop": "40px",
+                "margin-mobile": "20px",
+                "container-max": "1280px"
+              },
+              "fontFamily": {
+                "headline-md": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "label-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-md-mobile": ["Manrope"],
+                "title-lg": ["Manrope"],
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+      </script>
+    <style>
+        body {
+            background-color: #fff8f6;
+            color: #2b160f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+    <!-- Header -->
+    <header class="w-full py-6 px-margin-mobile md:px-margin-desktop flex justify-between items-center bg-surface-container-lowest border-b border-outline-variant/10">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-3xl">agriculture</span>
+            <h1 class="font-headline-md text-headline-md text-primary tracking-tight">AgroLink Nigeria</h1>
+        </div>
+        <a href="designs/login_sign_up_agrolink_nigeria.html" class="flex items-center gap-2 text-primary hover:underline font-label-md">
+            <span class="material-symbols-outlined text-xl">arrow_back</span>
+            Back to Sign Up
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-margin-mobile py-12 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/30 p-8 md:p-12">
+                <h1 class="font-display-lg text-display-lg text-primary mb-6">Marketplace Rules</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Last updated: January 2024</p>
+
+                <div class="space-y-8">
+                    <!-- Section 1 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">verified_user</span>
+                            1. Account Registration & Verification
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>All users must provide accurate and complete information during registration.</li>
+                            <li>Sellers (farmers) must complete verification before listing products for sale.</li>
+                            <li>Each user is allowed only one account per role (buyer or seller).</li>
+                            <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+                            2. Product Listings
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>All products must be accurately described with real photos and specifications.</li>
+                            <li>Sellers must list only agricultural products they own or have rights to sell.</li>
+                            <li>Prohibited items include illegal substances, counterfeit goods, and non-agricultural products.</li>
+                            <li>Prices must be fair and reflect the quality and quantity of the product.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">payments</span>
+                            3. Transactions & Payments
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>All transactions are protected by our escrow system until delivery is confirmed.</li>
+                            <li>Payment must be made through AgroLink's secure payment system only.</li>
+                            <li>External payment arrangements are prohibited and may result in account suspension.</li>
+                            <li>Refunds are processed according to our dispute resolution policy.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                            4. Delivery & Logistics
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>Sellers must ship orders within the agreed timeframe.</li>
+                            <li>Buyers must confirm receipt within 7 days of delivery.</li>
+                            <li>Both parties must communicate through AgroLink's messaging system.</li>
+                            <li>Delivery disputes will be resolved based on provided evidence and tracking information.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">gavel</span>
+                            5. Prohibited Activities
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>False advertising or misrepresentation of products.</li>
+                            <li>Manipulating ratings, reviews, or transaction history.</li>
+                            <li>Harassment, abuse, or inappropriate behavior toward other users.</li>
+                            <li>Attempting to bypass AgroLink's fees or payment systems.</li>
+                            <li>Using the platform for fraudulent or illegal activities.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">report_problem</span>
+                            6. Violations & Penalties
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>Minor violations may result in warnings or temporary account suspension.</li>
+                            <li>Severe or repeated violations will lead to permanent account termination.</li>
+                            <li>AgroLink reserves the right to remove listings that violate these rules without notice.</li>
+                            <li>Legal action may be taken for fraudulent activities.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section>
+                        <h2 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-2xl">support_agent</span>
+                            7. Dispute Resolution
+                        </h2>
+                        <ul class="space-y-3 font-body-md text-body-md text-on-surface-variant list-disc list-inside">
+                            <li>Disputes should first be resolved through direct communication between parties.</li>
+                            <li>AgroLink provides mediation services for unresolved disputes.</li>
+                            <li>Final decisions on disputes rest with AgroLink's administration.</li>
+                            <li>Both parties agree to abide by AgroLink's dispute resolution process.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="mt-12 p-6 bg-primary-container/10 rounded-xl border border-primary/20">
+                    <p class="font-body-md text-body-md text-primary font-semibold">
+                        By using AgroLink Nigeria, you agree to abide by these marketplace rules. Violations may result in account suspension or termination.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 px-margin-desktop bg-surface-container-highest mt-auto border-t border-outline-variant/10">
+        <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 AgroLink Nigeria. Digital Harvest for Sustainable Growth.</p>
+            <div class="flex gap-6">
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Farmer Terms</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="marketplace-rules.html">Marketplace Rules</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

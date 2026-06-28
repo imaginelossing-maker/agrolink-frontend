@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dashboard - AgroLink Nigeria</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "secondary-fixed-dim": "#78dc77",
+                "surface-variant": "#ffdbce",
+                "primary-container": "#2e7d32",
+                "on-surface-variant": "#40493d",
+                "on-secondary-fixed-variant": "#005313",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#91f78e",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#88d982",
+                "error": "#ba1a1a",
+                "tertiary-fixed": "#ffddb5",
+                "surface-container-high": "#ffe2d9",
+                "background": "#fff8f6",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "tertiary": "#774c00",
+                "surface-container": "#ffe9e2",
+                "primary-fixed": "#a3f69c",
+                "surface": "#fff8f6",
+                "on-primary-fixed": "#002204",
+                "inverse-on-surface": "#ffede7",
+                "secondary-fixed": "#94f990",
+                "secondary": "#006e1c",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#ffb957",
+                "on-tertiary": "#ffffff",
+                "on-background": "#2b160f",
+                "tertiary-container": "#986200",
+                "outline": "#707a6c",
+                "primary-fixed-dim": "#88d982",
+                "primary": "#0d631b",
+                "surface-dim": "#f8d2c4",
+                "on-secondary": "#ffffff",
+                "surface-tint": "#1b6d24",
+                "surface-bright": "#fff8f6",
+                "on-tertiary-fixed": "#2a1800",
+                "surface-container-highest": "#ffdbce",
+                "on-surface": "#2b160f",
+                "on-primary-fixed-variant": "#005312",
+                "on-primary-container": "#cbffc2",
+                "on-tertiary-container": "#ffeede",
+                "on-secondary-fixed": "#002204",
+                "inverse-surface": "#422b22",
+                "surface-container-low": "#fff1ec",
+                "outline-variant": "#bfcaba",
+                "on-tertiary-fixed-variant": "#643f00",
+                "on-secondary-container": "#00731e"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "unit": "8px",
+                "gutter-desktop": "24px",
+                "gutter-mobile": "16px",
+                "margin-desktop": "40px",
+                "margin-mobile": "20px",
+                "container-max": "1280px"
+              },
+              "fontFamily": {
+                "headline-md": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "label-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-md-mobile": ["Manrope"],
+                "title-lg": ["Manrope"],
+                "body-md": ["Inter"],
+                "display-lg-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+      </script>
+    <style>
+        body {
+            background-color: #fff8f6;
+            color: #2b160f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+    <!-- Header -->
+    <header class="w-full sticky top-0 z-50 shadow-sm bg-surface-container-lowest">
+        <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-[32px]">agriculture</span>
+                <h1 class="text-title-lg font-headline-md text-primary tracking-tight">AgroLink Nigeria</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="../cart.html" class="p-2 rounded-full hover:bg-surface-container transition-colors inline-block relative">
+                    <span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </a>
+                <div id="profile-icon" class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-on-primary-container font-bold border-2 border-outline-variant cursor-pointer hover:shadow-md transition-shadow">
+                    <span id="user-initials">BY</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pb-24">
+        <!-- Hero Section -->
+        <section class="px-margin-mobile md:px-margin-desktop pt-8 pb-4 max-w-container-max mx-auto">
+            <h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-2">My Dashboard</h2>
+            <p class="font-body-md text-on-surface-variant">Track your orders, spending, and activity on AgroLink.</p>
+        </section>
+
+        <!-- Stats Cards -->
+        <section class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-4">
+                    <div class="flex items-center gap-2 text-primary mb-2">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        <span class="text-sm font-label-sm text-on-surface-variant">Total Orders</span>
+                    </div>
+                    <p id="total-orders" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">0</p>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-4">
+                    <div class="flex items-center gap-2 text-primary mb-2">
+                        <span class="material-symbols-outlined">payments</span>
+                        <span class="text-sm font-label-sm text-on-surface-variant">Total Spent</span>
+                    </div>
+                    <p id="total-spent" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">₦0</p>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-4">
+                    <div class="flex items-center gap-2 text-primary mb-2">
+                        <span class="material-symbols-outlined">favorite</span>
+                        <span class="text-sm font-label-sm text-on-surface-variant">Wishlist</span>
+                    </div>
+                    <p id="wishlist-count" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">0</p>
+                </div>
+                <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 p-4">
+                    <div class="flex items-center gap-2 text-primary mb-2">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        <span class="text-sm font-label-sm text-on-surface-variant">In Transit</span>
+                    </div>
+                    <p id="in-transit" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Orders -->
+        <section class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-title-lg text-title-lg text-on-surface">Recent Orders</h3>
+                <a href="#" class="text-primary font-label-md hover:underline">View All</a>
+            </div>
+            <div id="orders-container" class="space-y-4">
+                <div class="bg-surface-container-lowest rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-surface-variant text-2xl">inbox</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-label-md font-bold text-on-surface">No orders yet</h4>
+                        <p class="text-sm text-on-surface-variant">Start shopping to see your orders here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spending Overview -->
+        <section class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-6">Spending Overview</h3>
+            <div class="bg-surface-container-low rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-sm text-on-surface-variant">This Month</p>
+                        <p id="monthly-spending" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary">₦0</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary-container">account_balance_wallet</span>
+                    </div>
+                </div>
+                <div class="h-2 bg-surface-container-high rounded-full overflow-hidden">
+                    <div id="spending-bar" class="h-full bg-primary rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2">0% of monthly budget</p>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-6">Quick Actions</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="buyer_dashboard_agrolink_nigeria.html" class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-2 hover:shadow-md transition-shadow">
+                    <span class="material-symbols-outlined text-3xl text-primary">storefront</span>
+                    <span class="text-sm font-label-md text-on-surface">Browse Products</span>
+                </a>
+                <a href="../buyer-profile.html" class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-2 hover:shadow-md transition-shadow">
+                    <span class="material-symbols-outlined text-3xl text-primary">edit</span>
+                    <span class="text-sm font-label-md text-on-surface">Edit Profile</span>
+                </a>
+                <a href="../cart.html" class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-2 hover:shadow-md transition-shadow">
+                    <span class="material-symbols-outlined text-3xl text-primary">shopping_cart</span>
+                    <span class="text-sm font-label-md text-on-surface">View Cart</span>
+                </a>
+                <a href="buyer_insights_agrolink_nigeria.html" class="bg-surface-container-lowest rounded-xl p-4 flex flex-col items-center gap-2 hover:shadow-md transition-shadow">
+                    <span class="material-symbols-outlined text-3xl text-primary">insights</span>
+                    <span class="text-sm font-label-md text-on-surface">Market Insights</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- BottomNavBar -->
+    <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-margin-mobile bg-surface z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high active:scale-95 transition-transform" href="buyer_dashboard_agrolink_nigeria.html">
+            <span class="material-symbols-outlined">storefront</span>
+            <span class="font-label-sm text-label-sm">Market</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high active:scale-95 transition-transform" href="buyer_insights_agrolink_nigeria.html">
+            <span class="material-symbols-outlined">wb_sunny</span>
+            <span class="font-label-sm text-label-sm">Insights</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 active:scale-95 transition-transform" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            <span class="font-label-sm text-label-sm">Dashboard</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high active:scale-95 transition-transform" href="buyer_surplus_agrolink_nigeria.html">
+            <span class="material-symbols-outlined">recycling</span>
+            <span class="font-label-sm text-label-sm">Surplus</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1" href="../buyer-profile.html">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="font-label-sm">Profile</span>
+        </a>
+    </nav>
+
+    <script>
+        // Update cart count
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total = 0;
+            cart.forEach(item => {
+                total += item.quantity;
+            });
+            const count = document.getElementById("cart-count");
+            if (count) {
+                count.innerText = total;
+            }
+        }
+
+        // Update user initials
+        function updateUserInitials() {
+            const userName = localStorage.getItem('userName') || 'Buyer';
+            const initials = userName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+            const initialsEl = document.getElementById('user-initials');
+            if (initialsEl) {
+                initialsEl.innerText = initials;
+            }
+        }
+
+        // Load dashboard stats
+        function loadDashboardStats() {
+            const buyerProfile = JSON.parse(localStorage.getItem('buyerProfile')) || {};
+            
+            // Update orders
+            const orders = buyerProfile.orders || 0;
+            document.getElementById('total-orders').innerText = orders;
+            
+            // Update wishlist
+            const wishlist = buyerProfile.wishlist || 0;
+            document.getElementById('wishlist-count').innerText = wishlist;
+            
+            // Update in transit (mock data for now)
+            document.getElementById('in-transit').innerText = '0';
+            
+            // Update total spent (mock calculation from cart)
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalSpent = 0;
+            cart.forEach(item => {
+                totalSpent += item.price * item.quantity;
+            });
+            document.getElementById('total-spent').innerText = '₦' + totalSpent.toLocaleString();
+            document.getElementById('monthly-spending').innerText = '₦' + totalSpent.toLocaleString();
+        }
+
+        updateCartCount();
+        updateUserInitials();
+        loadDashboardStats();
+
+        // Logout functionality - profile icon click
+        document.getElementById('profile-icon')?.addEventListener('click', () => {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.clear();
+                window.location.href = '../designs/login_sign_up_agrolink_nigeria.html';
+            }
+        });
+    </script>
+</body>
+</html>

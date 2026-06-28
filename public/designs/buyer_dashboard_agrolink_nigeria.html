@@ -163,7 +163,7 @@ View Cart
 
 </div>
 </div>
-<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-on-primary-container font-bold border-2 border-outline-variant">
+<div id="profile-icon" class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center text-on-primary-container font-bold border-2 border-outline-variant cursor-pointer hover:shadow-md transition-shadow">
                     AO
                 </div>
 </div>
@@ -173,7 +173,7 @@ View Cart
 <!-- Hero & Welcome -->
 <section class="px-margin-mobile md:px-margin-desktop pt-8 pb-4 max-w-container-max mx-auto">
 <div class="mb-6">
-<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Good Morning, Amina</h2>
+<h2 id="user-greeting" class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface">Good Morning, Amina</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">Discover fresh harvests from local farmers today.</p>
 </div>
 <!-- Search Bar -->
@@ -181,8 +181,8 @@ View Cart
 <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-outline">search</span>
 </div>
-<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none font-body-md shadow-sm" placeholder="Search for grains, vegetables, or sellers..." type="text"/>
-<button class="absolute right-3 inset-y-3 px-4 bg-primary text-on-primary rounded-lg font-label-md transition-all active:scale-95">
+<input id="search-input" class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant bg-surface hover:bg-surface-container-low focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none font-body-md shadow-sm" placeholder="Search for grains, vegetables, or sellers..." type="text"/>
+<button id="search-button" class="absolute right-3 inset-y-3 px-4 bg-primary text-on-primary rounded-lg font-label-md transition-all active:scale-95">
                     Search
                 </button>
 </div>
@@ -190,13 +190,13 @@ View Cart
 <!-- Category Chips -->
 <section class="px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto overflow-hidden">
 <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
-<button class="px-6 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-md whitespace-nowrap shadow-sm">All Products</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Grains</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Vegetables</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Tubers</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Livestock</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Fruits</button>
-<button class="px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors">Spices</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-md whitespace-nowrap shadow-sm" data-category="all">All Products</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="grains">Grains</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="vegetables">Vegetables</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="tubers">Tubers</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="livestock">Livestock</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="fruits">Fruits</button>
+<button class="filter-btn px-6 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-fixed-dim transition-colors" data-category="spices">Spices</button>
 </div>
 </section>
 <!-- Main Product Grid -->
@@ -216,9 +216,9 @@ arrow_forward
 </span>
 </a>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter-mobile md:gap-gutter-desktop">
+<div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter-mobile md:gap-gutter-desktop">
 <!-- Product Card 1 -->
-<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden">
+<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden" data-category="grains" data-name="Premium Brown Rice">
 <div class="relative aspect-[4/3] overflow-hidden">
 <img alt="Bag of Brown Rice" class="w-full h-full object-cover" data-alt="A large, rustic burlap sack overflowing with high-quality brown rice grains. The scene is set in a bright, sun-drenched Nigerian warehouse with soft natural light highlighting the texture of the rice. The overall aesthetic is professional and clean, using a palette of warm earthy browns and soft greens. High-end agricultural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9TYCNUgtOCzw-fXT-x5GAHi7byJTq8sY-sWuoR9MRFYvqoDUQn_CzQBnUqLDsYg_GCgqv2Opzg-Zg4VOMq3krfQw4WYUnfl2-7OhaXrOvRqBtJMyzxLQFVYeGgb78WAuQxVdi63WwO3Fm_4mzuNT9UvYcoZd38akCk5P3ZNK48BMsD8iOfEMfu7s1kHBv1osNm1bZcNTudQj8gm1YN_bPACs9Ab_kAJxwdh09QivTcFbTXX9xpC45-W6TTdUmITB2BsRF1bLF2Q"/>
 <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-primary shadow-sm active:scale-90 transition-transform cursor-pointer">
@@ -254,7 +254,7 @@ Add To Cart
 </div>
 </div>
 <!-- Product Card 2 -->
-<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden">
+<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden" data-category="vegetables" data-name="Fresh Plum Tomatoes">
 <div class="relative aspect-[4/3] overflow-hidden">
 <img alt="Fresh Tomatoes" class="w-full h-full object-cover" data-alt="A basket of vibrant, deep red organic tomatoes freshly harvested, still with green stems attached. The lighting is soft and directional, creating a premium farm-to-table atmosphere. The background is a slightly out-of-focus wooden harvest table. The color palette emphasizes rich reds and organic greens, fitting a modern digital harvest brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSx36gzo5KnOJelfRKay3795QugSCFInxKg_lhl-FKLATPbS7vd0DKRY87eMZuQe8kl31Jvo5mTkmmjHrhSY_529NIyPptxtzDDWf09EBf1maWyQIiFLCgtqMuTRzUsfRZK4x4hf5eGSeZKtHUlzGT3GMFXZ_7zC3kom3dnvpDKhScBonO3luWfeGtJch61c8dYtuFXJe73LBdzj9huOZ0bK7hHbAIPMjpNnilx14p8DRNtfUt6nPL-gWqSLEGB0W9kPU3TTz-Q"/>
 <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-primary shadow-sm">
@@ -281,7 +281,7 @@ Add To Cart
 </div>
 </div>
 <!-- Product Card 3 -->
-<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden">
+<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden" data-category="tubers" data-name="Large White Yam">
 <div class="relative aspect-[4/3] overflow-hidden">
 <img alt="White Yams" class="w-full h-full object-cover" data-alt="A stack of large, earthy white yams resting on a clean concrete floor in a professional sorting facility. The lighting is bright and even, highlighting the textured skin of the tubers. The scene conveys reliability and bulk supply. Minimalist composition with a focus on agricultural productivity and quality control in a modern Nigerian context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo2n7_mPybycvJoWZCMtsUKt8Tbog-dhysKnstH1KVldjXdclisE8xXr5JYjOP9jhr8agwC2TaVgVs8b0QbCJOmszeU92BiE1Jy-xq2mm9LTfBki_FSqJtMS2KPJoUtFYGvz1w3IPQWpAbB_sW0Gl67lHzNmHZN70udyT9X_bpCrM1O-uvkmxC6PCxJGOYvg2U4iOsUKW8WEeS2h7OZsPHYIrPp7Slvy8JEhW1WcLBTtp8uwrx7cMH9zItl12uBzobpXRZ9lBbZw"/>
 </div>
@@ -305,7 +305,7 @@ Add To Cart
 </div>
 </div>
 <!-- Product Card 4 -->
-<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden">
+<div class="product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden" data-category="grains" data-name="Yellow Maize">
 <div class="relative aspect-[4/3] overflow-hidden">
 <img alt="Dry Corn" class="w-full h-full object-cover" data-alt="Golden dried maize kernels in a sleek modern container. The lighting is sharp, creating crisp shadows and highlighting the rich yellow hues of the corn. The visual style is clean and corporate, representing data-driven agriculture. The colors are dominated by harvest gold and deep greens, consistent with a professional digital marketplace for Nigerian farmers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTVuooFed1f-QZwRY-j1WmdETwZOl0vsGnC-Z1jhkW2mSdczX9luNJj0yUn9FMCMsC-wTPv6D2uc5i2kfplnfOUBAN7CsEYsRSPSrJFPwJEonQBf267yr-ltXyIAOUgwB8wqlBNetqSugmU_33lKxU2m1XsD7Iiom1hNjbDa2jxboJdhay_YnP5qNr3ofhfOTqoNYYKe26cRS9LZSDnY0pJ33WJ0Gh0T5kyg3T8As3JtOrbYnTi7vz0zv13iz39iDgR9azbmdvHw"/>
 </div>
@@ -333,7 +333,7 @@ Add To Cart
 <!-- Recent Activity / Trends -->
 <section class="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto">
 <h3 class="font-title-lg text-title-lg text-on-surface mb-6">Recent Trends</h3>
-<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center">
+<div class="bg-surface-container-low rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-center" data-crop="tomato">
 <div class="flex-1">
 <div class="flex items-center gap-2 text-primary mb-2">
 <span class="material-symbols-outlined">trending_up</span>
@@ -341,7 +341,7 @@ Add To Cart
 </div>
 <h4 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md mb-2">Tomato prices are down 15% in Kaduna</h4>
 <p class="font-body-md text-on-surface-variant">Bulk buying season has started. Check out verified sellers for the best deals this week.</p>
-<button class="mt-6 px-8 py-3 bg-primary text-on-primary rounded-full font-label-md hover:shadow-lg transition-shadow">Read Analysis</button>
+<button id="read-analysis-btn" class="mt-6 px-8 py-3 bg-primary text-on-primary rounded-full font-label-md hover:shadow-lg transition-shadow">Read Analysis</button>
 </div>
 <div class="w-full md:w-1/3 aspect-video rounded-xl overflow-hidden shadow-md">
 <img alt="Farmer Market" class="w-full h-full object-cover" data-alt="An overhead view of a bustling, organized farmer's marketplace in Nigeria. The scene is filled with colorful produce crates and professionals in clean agricultural attire interacting. The lighting is bright and cheerful, suggesting growth and prosperity. The aesthetic is clean, modern, and trustworthy, with a focus on community and digital trade efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj-GOCD00YJwX0LuM2HhdKlay4E8OpgN72YVAulCRuYxVbD-pPrVs-GtM5Y8-Dl_rmXGExG879-fvpswpxyBvh1HvmDWkJF6lkpbuktIwf_LPRDdA_zdKVL39eU_liJKvT1JqLAsM9iXfBRfUPwin5tbwq9ZYE6-d-S53sjI9aRq3V9h5WZ9rNXJZGGssZuW8FZHRmMKjzrLgIGV1_Dlo4nJLvcYRR6fVcsVtDY7FBZj4n0YCdvsUMDR-geoNdfauMhJV15-WVGA"/>
@@ -351,19 +351,19 @@ Add To Cart
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-margin-mobile bg-surface dark:bg-surface-dim z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
-<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 active:scale-95 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 active:scale-95 transition-transform" href="buyer_dashboard_agrolink_nigeria.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
 <span class="font-label-sm text-label-sm">Market</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="buyer_insights_agrolink_nigeria.html">
 <span class="material-symbols-outlined">wb_sunny</span>
 <span class="font-label-sm text-label-sm">Insights</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="buyer_dashboard_stats_agrolink_nigeria.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-label-sm text-label-sm">Dashboard</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-inverse-surface active:scale-95 transition-transform" href="buyer_surplus_agrolink_nigeria.html">
 <span class="material-symbols-outlined">recycling</span>
 <span class="font-label-sm text-label-sm">Surplus</span>
 </a>
@@ -546,6 +546,153 @@ chip.classList.add(
 });
 
 updateCartCount();
+
+// Issue 1: Dynamic User Name Display
+function updateUserName() {
+    const userName = localStorage.getItem('userName') || 'Buyer';
+    const greetingElement = document.getElementById('user-greeting');
+    if (greetingElement) {
+        const hour = new Date().getHours();
+        let timeGreeting = 'Good Morning';
+        if (hour >= 12 && hour < 17) {
+            timeGreeting = 'Good Afternoon';
+        } else if (hour >= 17) {
+            timeGreeting = 'Good Evening';
+        }
+        greetingElement.textContent = `${timeGreeting}, ${userName}`;
+    }
+}
+
+// Issue 2: Search Functionality
+function filterProducts(searchTerm, category = 'all') {
+    const products = document.querySelectorAll('.product-card');
+    const term = searchTerm.toLowerCase();
+    
+    products.forEach(product => {
+        const productName = product.dataset.name?.toLowerCase() || '';
+        const productCategory = product.dataset.category || '';
+        
+        const matchesSearch = productName.includes(term);
+        const matchesCategory = category === 'all' || productCategory === category;
+        
+        if (matchesSearch && matchesCategory) {
+            product.style.display = 'flex';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Search button click handler
+document.getElementById('search-button')?.addEventListener('click', () => {
+    const searchTerm = document.getElementById('search-input').value;
+    const activeFilter = document.querySelector('.filter-btn.bg-primary-container');
+    const category = activeFilter?.dataset.category || 'all';
+    filterProducts(searchTerm, category);
+});
+
+// Search input Enter key handler
+document.getElementById('search-input')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const searchTerm = e.target.value;
+        const activeFilter = document.querySelector('.filter-btn.bg-primary-container');
+        const category = activeFilter?.dataset.category || 'all';
+        filterProducts(searchTerm, category);
+    }
+});
+
+// Issue 3: Category Filter Functionality (Enhanced)
+const filterButtons = document.querySelectorAll('.filter-btn');
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(btn => {
+            btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+            btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        button.classList.add('bg-primary-container', 'text-on-primary-container');
+        
+        // Filter products
+        const category = button.dataset.category;
+        const searchTerm = document.getElementById('search-input').value;
+        filterProducts(searchTerm, category);
+    });
+});
+
+// Initialize user name on page load
+updateUserName();
+
+// Load seller-added products from localStorage
+function loadSellerProducts() {
+    const sellerProducts = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+    const productsGrid = document.getElementById('products-grid');
+    
+    if (sellerProducts.length > 0) {
+        sellerProducts.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(46,125,50,0.06)] border border-outline-variant/10 overflow-hidden';
+            productCard.setAttribute('data-category', product.category);
+            productCard.setAttribute('data-name', product.name);
+            
+            productCard.innerHTML = `
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <img alt="${product.name}" class="w-full h-full object-cover" src="${product.image}"/>
+                    <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-primary shadow-sm">
+                        <span class="material-symbols-outlined text-xl">favorite</span>
+                    </div>
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <span class="text-[10px] font-label-sm uppercase tracking-wider text-secondary mb-1">${product.category}</span>
+                    <h4 class="font-label-md text-on-surface line-clamp-1 mb-1">${product.name}</h4>
+                    <div class="flex items-center gap-1 text-on-surface-variant mb-3">
+                        <span class="material-symbols-outlined text-sm">location_on</span>
+                        <span class="text-[12px]">${product.location}</span>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-title-lg text-primary">₦${product.price.toLocaleString()}</span>
+                            <span class="text-[11px] font-label-sm text-outline">By ${product.farmer}</span>
+                        </div>
+                        <button onclick="addToCart('${product.name}', ${product.price}, '${product.image}')" class="w-full py-2 bg-primary text-white rounded-lg">
+                            Add To Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            productsGrid.appendChild(productCard);
+        });
+    }
+}
+
+// Load seller products on page load
+loadSellerProducts();
+
+// Read Analysis button - opens crop-specific external links
+document.getElementById('read-analysis-btn')?.addEventListener('click', () => {
+    const trendSection = document.querySelector('[data-crop]');
+    const crop = trendSection?.dataset.crop || 'general';
+    
+    // Crop-specific external analysis links
+    const analysisLinks = {
+        'tomato': 'https://www.fao.org/giews/food-prices/price-detail/en/',
+        'rice': 'https://www.fao.org/giews/food-prices/price-detail/en/',
+        'maize': 'https://www.fao.org/giews/food-prices/price-detail/en/',
+        'yam': 'https://www.fao.org/giews/food-prices/price-detail/en/',
+        'general': 'https://www.fao.org/giews/food-prices/price-detail/en/'
+    };
+    
+    window.open(analysisLinks[crop] || analysisLinks['general'], '_blank');
+});
+
+// Logout functionality - profile icon click
+document.getElementById('profile-icon')?.addEventListener('click', () => {
+    if (confirm('Are you sure you want to logout?')) {
+        localStorage.clear();
+        window.location.href = '../designs/login_sign_up_agrolink_nigeria.html';
+    }
+});
 
 </script>
 </body></html>

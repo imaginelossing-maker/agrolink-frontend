@@ -50,22 +50,23 @@ Farmer Profile
 
 <div class="w-28 h-28 rounded-full overflow-hidden">
 
-<img
-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43"
+<img id="seller-image"
+src=""
+alt="Seller profile photo"
 class="w-full h-full object-cover"
 >
 
 </div>
 
-<h2 class="text-2xl font-bold mt-4">
+<h2 id="seller-name" class="text-2xl font-bold mt-4">
 
-Musa Ali
+Loading...
 
 </h2>
 
-<p class="text-gray-500">
+<p id="seller-role-location" class="text-gray-500">
 
-Farmer • Jos, Plateau State
+Farmer • Loading location
 
 </p>
 
@@ -86,8 +87,8 @@ agriculture
 Farm Size
 </h3>
 
-<p class="text-gray-600">
-25 Acres
+<p id="seller-farm-size" class="text-gray-600">
+Loading...
 </p>
 
 </div>
@@ -103,8 +104,8 @@ inventory_2
 Products Listed
 </h3>
 
-<p class="text-gray-600">
-18 Products
+<p id="seller-products" class="text-gray-600">
+Loading...
 </p>
 
 </div>
@@ -120,8 +121,8 @@ shopping_cart
 Orders Received
 </h3>
 
-<p class="text-gray-600">
-43 Orders
+<p id="seller-orders" class="text-gray-600">
+Loading...
 </p>
 
 </div>
@@ -137,8 +138,8 @@ payments
 Revenue
 </h3>
 
-<p class="text-gray-600">
-₦850,000
+<p id="seller-revenue" class="text-gray-600">
+Loading...
 </p>
 
 </div>
@@ -156,41 +157,86 @@ Farm Information
 
 <div class="bg-gray-50 rounded-xl p-6">
 
-<p><strong>Farm Name:</strong> Musa Agro Farms</p>
+<p><strong>Farm Name:</strong> <span id="seller-farm-name">Loading...</span></p>
 
 <p class="mt-3">
 <strong>Main Produce:</strong>
-Rice, Tomatoes, Maize, Yam
+<span id="seller-produce">Loading...</span>
 </p>
 
 <p class="mt-3">
 <strong>Location:</strong>
-Jos, Plateau State, Nigeria
+<span id="seller-location">Loading...</span>
 </p>
 
 <p class="mt-3">
 <strong>Experience:</strong>
-8 years
+<span id="seller-experience">Loading...</span>
 </p>
 
 </div>
 
 </div>
 
+<div id="edit-profile-form" class="hidden mt-8 bg-white rounded-2xl shadow p-6 border border-green-100">
+  <h2 class="text-xl font-bold text-green-700 mb-4">Edit Farmer Profile</h2>
+  <form id="seller-form" class="grid gap-4 lg:grid-cols-2" onsubmit="saveSellerProfile(event)">
+    <div class="sm:col-span-2">
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-seller-name">Full Name</label>
+      <input id="input-seller-name" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="text" required />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-farm-name">Farm Name</label>
+      <input id="input-farm-name" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="text" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-produce">Main Produce</label>
+      <input id="input-produce" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="text" placeholder="Rice, Tomatoes, Maize" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-location">Location</label>
+      <input id="input-location" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="text" placeholder="Jos, Plateau State" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-farm-size">Farm Size (Acres)</label>
+      <input id="input-farm-size" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="number" min="0" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-products">Products Listed</label>
+      <input id="input-products" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="number" min="0" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-orders">Orders Received</label>
+      <input id="input-orders" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="number" min="0" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-revenue">Revenue</label>
+      <input id="input-revenue" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="text" placeholder="₦0" />
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-experience">Experience (Years)</label>
+      <input id="input-experience" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="number" min="0" />
+    </div>
+    <div class="sm:col-span-2">
+      <label class="block text-sm font-semibold text-gray-700 mb-2" for="input-image">Image URL</label>
+      <input id="input-image" class="w-full rounded-xl border border-gray-300 px-4 py-3" type="url" placeholder="https://..." />
+    </div>
+    <div class="sm:col-span-2 flex justify-end gap-3">
+      <button id="cancel-edit-btn" type="button" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg">Cancel</button>
+      <button id="save-profile-btn" type="submit" class="bg-green-700 text-white px-6 py-3 rounded-lg">Save Changes</button>
+    </div>
+  </form>
+</div>
 
 <div class="mt-8 flex gap-4">
 
-<button
-class="bg-green-700 text-white px-6 py-3 rounded-lg"
->
+<button id="edit-profile-btn" type="button" class="bg-green-700 text-white px-6 py-3 rounded-lg">
 
 Edit Profile
 
 </button>
 
-<button
-class="border border-red-500 text-red-500 px-6 py-3 rounded-lg"
->
+<button id="logout-btn" type="button" class="border border-red-500 text-red-500 px-6 py-3 rounded-lg">
 
 Logout
 
@@ -201,6 +247,183 @@ Logout
 </div>
 
 </div>
+
+<script>
+const sellerProfileEndpoint = '/api/seller/profile';
+
+function safeText(value, fallback = 'Not available') {
+  return value != null && value !== '' ? value : fallback;
+}
+
+function formatStat(value, unit) {
+  if (value == null || value === '') return 'Not available';
+  return typeof value === 'number' ? `${value} ${unit}` : `${value}`;
+}
+
+function applySellerProfile(profile) {
+  document.getElementById('seller-name').innerText = safeText(profile.name, 'Seller Name');
+  document.getElementById('seller-role-location').innerText = `${safeText(profile.role, 'Farmer')} • ${safeText(profile.location, 'Unknown')}`;
+  document.getElementById('seller-farm-size').innerText = formatStat(profile.farmSize, 'Acres');
+  document.getElementById('seller-products').innerText = formatStat(profile.productsListed, 'Products');
+  document.getElementById('seller-orders').innerText = formatStat(profile.ordersReceived, 'Orders');
+  document.getElementById('seller-revenue').innerText = safeText(profile.revenue, 'Not available');
+  document.getElementById('seller-farm-name').innerText = safeText(profile.farmName, 'Not available');
+  document.getElementById('seller-produce').innerText = safeText(profile.produce, 'Not available');
+  document.getElementById('seller-location').innerText = safeText(profile.farmLocation, 'Not available');
+  document.getElementById('seller-experience').innerText = formatStat(profile.experience, 'years');
+
+  const imageEl = document.getElementById('seller-image');
+  if (profile.image) {
+    imageEl.src = profile.image;
+  } else {
+    imageEl.removeAttribute('src');
+  }
+}
+
+const sellerProfileDraftKey = 'sellerProfileDraft';
+let currentSellerProfile = null;
+
+function getSellerDraft() {
+  try {
+    return JSON.parse(localStorage.getItem(sellerProfileDraftKey)) || null;
+  } catch {
+    return null;
+  }
+}
+
+function setSellerDraft(data) {
+  localStorage.setItem(sellerProfileDraftKey, JSON.stringify(data));
+}
+
+function mergeWithDraft(profile) {
+  const draft = getSellerDraft();
+  return draft ? { ...profile, ...draft } : profile;
+}
+
+function fillSellerForm(profile) {
+  document.getElementById('input-seller-name').value = profile.name || '';
+  document.getElementById('input-farm-name').value = profile.farmName || '';
+  document.getElementById('input-produce').value = profile.produce || '';
+  document.getElementById('input-location').value = profile.farmLocation || profile.location || '';
+  document.getElementById('input-farm-size').value = profile.farmSize || '';
+  document.getElementById('input-products').value = profile.productsListed || '';
+  document.getElementById('input-orders').value = profile.ordersReceived || '';
+  document.getElementById('input-revenue').value = profile.revenue || '';
+  document.getElementById('input-experience').value = profile.experience || '';
+  document.getElementById('input-image').value = profile.image || '';
+}
+
+function toggleEditForm() {
+  const form = document.getElementById('edit-profile-form');
+  form.classList.toggle('hidden');
+
+  if (!form.classList.contains('hidden')) {
+    fillSellerForm(currentSellerProfile || {});
+  }
+}
+
+async function saveSellerProfile(event) {
+  event.preventDefault();
+
+  const updatedProfile = {
+    name: document.getElementById('input-seller-name').value.trim(),
+    farmName: document.getElementById('input-farm-name').value.trim(),
+    produce: document.getElementById('input-produce').value.trim(),
+    location: document.getElementById('input-location').value.trim(),
+    farmLocation: document.getElementById('input-location').value.trim(),
+    farmSize: Number(document.getElementById('input-farm-size').value) || null,
+    productsListed: Number(document.getElementById('input-products').value) || null,
+    ordersReceived: Number(document.getElementById('input-orders').value) || null,
+    revenue: document.getElementById('input-revenue').value.trim(),
+    experience: Number(document.getElementById('input-experience').value) || null,
+    image: document.getElementById('input-image').value.trim(),
+    role: currentSellerProfile?.role || 'Farmer',
+  };
+
+  applySellerProfile(updatedProfile);
+  currentSellerProfile = updatedProfile;
+  setSellerDraft(updatedProfile);
+
+  try {
+    const response = await fetch(sellerProfileEndpoint, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(updatedProfile),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      currentSellerProfile = data || updatedProfile;
+      applySellerProfile(currentSellerProfile);
+      setSellerDraft(currentSellerProfile);
+    }
+  } catch (error) {
+    console.warn('Seller profile save error:', error);
+  }
+
+  toggleEditForm();
+}
+
+async function loadSellerProfile() {
+  const fallbackProfile = {
+    name: 'Seller Name',
+    role: 'Farmer',
+    location: 'Unknown',
+    farmSize: null,
+    productsListed: null,
+    ordersReceived: null,
+    revenue: null,
+    farmName: 'Not available',
+    produce: 'Not available',
+    farmLocation: 'Not available',
+    experience: null,
+    image: '',
+  };
+
+  try {
+    const response = await fetch(sellerProfileEndpoint, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    });
+
+    if (!response.ok) {
+      console.warn('Failed to load seller profile:', response.status);
+      currentSellerProfile = mergeWithDraft(fallbackProfile);
+      applySellerProfile(currentSellerProfile);
+      return;
+    }
+
+    const data = await response.json();
+    currentSellerProfile = mergeWithDraft(data || fallbackProfile);
+    applySellerProfile(currentSellerProfile);
+  } catch (error) {
+    console.warn('Seller profile fetch error:', error);
+    currentSellerProfile = mergeWithDraft(fallbackProfile);
+    applySellerProfile(currentSellerProfile);
+  }
+}
+
+function clearSellerProfile() {
+  localStorage.removeItem(sellerProfileDraftKey);
+  window.location.href = '/public/designs/login_sign_up_agrolink_nigeria.html';
+}
+
+function initSellerProfilePage() {
+  document.getElementById('edit-profile-btn')?.addEventListener('click', toggleEditForm);
+  document.getElementById('cancel-edit-btn')?.addEventListener('click', toggleEditForm);
+  document.getElementById('logout-btn')?.addEventListener('click', clearSellerProfile);
+  document.getElementById('seller-form')?.addEventListener('submit', saveSellerProfile);
+  loadSellerProfile();
+}
+
+document.addEventListener('DOMContentLoaded', initSellerProfilePage);
+</script>
 
 </body>
 </html>

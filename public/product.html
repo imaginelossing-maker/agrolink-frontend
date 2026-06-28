@@ -242,7 +242,8 @@ By ${product.farmer}
 </div>
 
 <button
-class="w-full mt-4 py-2 rounded-lg bg-green-700 text-white"
+onclick="addToCart('${product.name}', ${parseInt(product.price.replace(/[₦,]/g, ''))}, '${image}')"
+class="w-full mt-4 py-2 rounded-lg bg-green-700 text-white hover:bg-green-800 transition-colors"
 >
 Add To Cart
 </button>
@@ -256,6 +257,37 @@ Add To Cart
 });
 
 container.innerHTML=html;
+
+// Cart functionality
+function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name,
+            price,
+            image,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Show toast notification
+    const toast = document.createElement("div");
+    toast.className = "fixed top-6 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-[9999] transition-all duration-300";
+    toast.textContent = "✅ " + name + " added successfully";
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        setTimeout(() => toast.remove(), 300);
+    }, 2000);
+}
 
 </script>
 
