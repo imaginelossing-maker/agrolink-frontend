@@ -19,9 +19,10 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
+        {/* Default page */}
         <Route
           path="/"
-          element={<Navigate to="/login_sign_up_agrolink_nigeria" />}
+          element={<Navigate to="/landing_page_agrolink_nigeria" />}
         />
 
         <Route
