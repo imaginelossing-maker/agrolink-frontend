@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  min-height: max(884px, 100dvh);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255,248,246,0.95) 0%,
+    rgba(255,248,246,0.7) 100%
+  );
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap: 24px;
+}
+
+.active-role {
+  border-color: #0d631b;
+  background-color: #ffe9e2;
+  box-shadow: 0 4px 12px rgba(46,125,50,0.1);
+}
+
+.form-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-effect {
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.8);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.product-card {
+  transition:
+    transform .2s cubic-bezier(.4,0,.2,1),
+    box-shadow .2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.fill-icon {
+  font-variation-settings: 'FILL' 1;
+}
+
+.glass-card {
+  background: rgba(255,248,246,0.8);
+  backdrop-filter: blur(8px);
+}
+
+.form-card {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(46,125,50,0.06);
+  border: 1px solid #bfcaba;
+}
+
+.upload-area {
+  border: 2px dashed #bfcaba;
+  transition: all .2s ease-in-out;
+}
+
+.upload-area:hover {
+  border-color: #0d631b;
+  background-color: #fff1ec;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #bfcaba;
+  border-radius: 10px;
+}
