@@ -9,7 +9,7 @@ export default function FarmerProfile() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.3em] text-emerald-100 opacity-90">Farmer Profile</p>
-                <h1 className="mt-4 text-3xl font-extrabold tracking-tight">Amina Okafor</h1>
+                <h1 className="mt-4 text-3xl font-extrabold tracking-tight">Asiya</h1>
                 <p className="mt-3 max-w-2xl text-sm text-emerald-100/90 sm:text-base">
                   Your farm dashboard for product performance and order activity.
                 </p>
