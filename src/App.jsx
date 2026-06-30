@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import FarmerProfile from "./pages/FarmerProfile";
 import Orders from "./pages/Orders";
 import Cart from "./pages/Cart";
+import FarmerOrder from "./pages/FarmerOrder";
 import ProductManagement from "./pages/ProductManagement";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/farmer-profile" element={<FarmerProfile />} />
 
+        <Route path="/farmer-order" element={<FarmerOrder />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product-management" element={<ProductManagement />} />

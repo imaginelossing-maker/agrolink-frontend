@@ -5,7 +5,8 @@ export default function FarmerBottomNav() {
   { to: "/seller-dashboard", label: "Dashboard" },
   { to: "/farmer-marketplace", label: "Marketplace" },
   { to: "/farmer-insights", label: "Insights" },
-  { to: "/farmer-profile", label: "Profile" }, // FIXED
+   { to: "/farmer-order", label: "Order" }, 
+  { to: "/farmer-profile", label: "Profile" }, 
 ];
 
   return (
