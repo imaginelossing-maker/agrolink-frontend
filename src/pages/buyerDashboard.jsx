@@ -1,45 +1,178 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "../components/BottomNav";
-const products = [
-  {
-    id: 1,
-    name: "Premium Brown Rice (50kg)",
-    price: 45000,
-    farmer: "Musa Ali",
-    state: "Jos, Plateau",
-    category: "Grains",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9TYCNUgtOCzw-fXT-x5GAHi7byJTq8sY-sWuoR9MRFYvqoDUQn_CzQBnUqLDsYg_GCgqv2Opzg-Zg4VOMq3krfQw4WYUnfl2-7OhaXrOvRqBtJMyzxLQFVYeGgb78WAuQxVdi63WwO3Fm_4mzuNT9UvYcoZd38akCk5P3ZNK48BMsD8iOfEMfu7s1kHBv1osNm1bZcNTudQj8gm1YN_bPACs9Ab_kAJxwdh09QivTcFbTXX9xpC45-W6TTdUmITB2BsRF1bLF2Q"
-  },
-  {
-    id: 2,
-    name: "Fresh Tomatoes (Crate)",
-    price: 12500,
-    farmer: "Aminu Farm",
-    state: "Zaria, Kaduna",
-    category: "Vegetables",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBrSx36gzo5KnOJelfRKay3795QugSCFInxKg_lhl-FKLATPbS7vd0DKRY87eMZuQe8kl31Jvo5mTkmmjHrhSY_529NIyPptxtzDDWf09EBf1maWyQIiFLCgtqMuTRzUsfRZK4x4hf5eGSeZKtHUlzGT3GMFXZ_7zC3kom3dnvpDKhScBonO3luWfeGtJch61c8dYtuFXJe73LBdzj9huOZ0bK7hHbAIPMjpNnilx14p8DRNtfUt6nPL-gWqSLEGB0W9kPU3TTz-Q"
-  },
-  {
-    id: 3,
-    name: "Large White Yam",
-    price: 22000,
-    farmer: "Ortom Roots",
-    state: "Benue",
-    category: "Tubers",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRxSzOxcFrm_8Cye5tNVl5v8qRiLwrCZRmysdm7arqOGVloYkP_SqwWtB39UggJPorkgc_mbaf__LBpomxPoITyWZyrz54CsYS-H3JXpLJQFF3vmpfxEYyuXTEZFzvNdcZBA_gg2fTLFG32bx0az9w_CZ_cwfxQsO7FfuAV8pEw_E9jxUrAyrqovNTX1-N1FqGb7retAp6q1V3NmvtqoR9vlyrrfL96y-rrxxRwxMZlY7w4uZr5L7ey1EV_5ovvQb3Pamll3cKlQ"
-  },
-  {
-    id: 4,
-    name: "Yellow Maize",
-    price: 38000,
-    farmer: "Sani Grains",
-    state: "Kano",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=800&q=80"
-  }
+
+const farmers = [
+  "Musa Ali",
+  "Amina Yusuf",
+  "Ibrahim Bello",
+  "Chinedu Okafor",
+  "Grace Eze",
+  "Samuel Ade",
+  "Fatima Hassan",
+  "David James",
+  "Mary Johnson",
+  "Yakubu Musa",
+  "Ahmed Sule",
+  "Ngozi Obi",
+  "Joseph Daniel",
+  "Sarah Peter",
+  "Abdul Kareem",
+  "Blessing Umeh",
+  "Emeka Nwosu",
+  "Ruth Emmanuel",
+  "John Mark",
+  "Esther Musa",
 ];
 
+const produceList = [
+  {
+    name: "Tomatoes",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=800",
+  },
+  {
+    name: "Rice",
+    category: "Grains",
+    image:
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800",
+  },
+  {
+    name: "Yam",
+    category: "Tubers",
+    image:
+      "https://images.unsplash.com/photo-1603048719539-9ecb4aeef0d5?w=800",
+  },
+  {
+    name: "Maize",
+    category: "Grains",
+    image:
+      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=800",
+  },
+  {
+    name: "Beans",
+    category: "Grains",
+    image:
+      "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=800",
+  },
+  {
+    name: "Pepper",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1583663848850-46af132dc08e?w=800",
+  },
+  {
+    name: "Cabbage",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1615485925873-5b8dcbbead3d?w=800",
+  },
+  {
+    name: "Onions",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800",
+  },
+  {
+    name: "Cassava",
+    category: "Tubers",
+    image:
+      "https://images.unsplash.com/photo-1596097635121-14b38c5d1f7f?w=800",
+  },
+  {
+    name: "Bananas",
+    category: "Fruits",
+    image:
+      "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800",
+  },
+  {
+    name: "Orange",
+    category: "Fruits",
+    image:
+      "https://images.unsplash.com/photo-1547514701-42782101795e?w=800",
+  },
+  {
+    name: "Watermelon",
+    category: "Fruits",
+    image:
+      "https://images.unsplash.com/photo-1563114773-84221bd62daa?w=800",
+  },
+  {
+    name: "Groundnut",
+    category: "Grains",
+    image:
+      "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800",
+  },
+  {
+    name: "Cucumber",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=800",
+  },
+  {
+    name: "Potatoes",
+    category: "Tubers",
+    image:
+      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800",
+  },
+  {
+    name: "Mango",
+    category: "Fruits",
+    image:
+      "https://images.unsplash.com/photo-1553279768-865429fa0078?w=800",
+  },
+  {
+    name: "Okra",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1592928302636-c83cf1e1c887?w=800",
+  },
+  {
+    name: "Millet",
+    category: "Grains",
+    image:
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+  },
+  {
+    name: "Plantain",
+    category: "Fruits",
+    image:
+      "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=800",
+  },
+  {
+    name: "Spinach",
+    category: "Vegetables",
+    image:
+      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=800",
+  },
+];
+
+const states = [
+  "Kano",
+  "Kaduna",
+  "Benue",
+  "Lagos",
+  "Jos",
+  "Ogun",
+  "Enugu",
+  "Abuja",
+];
+
+const products = Array.from({ length: 200 }, (_, index) => {
+  const produce = produceList[index % produceList.length];
+  const farmer = farmers[Math.floor(index / 10) % farmers.length];
+
+  return {
+    id: index + 1,
+    name: `${produce.name} (${Math.floor(Math.random() * 50 + 5)}kg)`,
+    price: Math.floor(Math.random() * 50000 + 5000),
+    farmer,
+    state: states[Math.floor(Math.random() * states.length)],
+    category: produce.category,
+    image: produce.image,
+  };
+});
 export default function BuyerDashboard() {
   const [cartCount, setCartCount] = useState(0);
   const [userName, setUserName] = useState("");

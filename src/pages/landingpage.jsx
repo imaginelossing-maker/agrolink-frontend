@@ -104,6 +104,7 @@ export default function LandingPage() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <h2 className="font-headline-md text-headline-md-mobile md:text-headline-md text-on-background mb-16 text-center">
               Voices from the Field
+              
             </h2>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1 bg-surface-container p-8 rounded-2xl relative">
