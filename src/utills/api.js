@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // Local
-const baseURL = 'https://agrolink-backend-1.onrender.com';
-
+const baseURL = 'https://agrolink-backend-otue.onrender.com';
 const client = axios.create({
     baseURL,
     headers: {
